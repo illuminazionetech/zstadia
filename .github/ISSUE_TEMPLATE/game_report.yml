@@ -1,0 +1,77 @@
+name: Game report
+description: Tell everyone how a game behaves with Z Stadia, good or bad.
+title: "[Game] "
+labels: [game report]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Game reports build the compatibility list in [docs/COMPATIBILITY.md](https://github.com/illuminazionetech/zstadia/blob/main/docs/COMPATIBILITY.md). One game per report, please.
+  - type: input
+    id: game
+    attributes:
+      label: Game and version
+      placeholder: Cyberpunk 2077 2.3.1
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: Where it comes from
+      options:
+        - Steam
+        - GOG (Heroic or GOG Galaxy)
+        - Epic Games Store (Heroic or Epic launcher)
+        - Mac App Store
+        - Direct download
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Which version of the game
+      options:
+        - Native Mac version, wrapped with zstadia wrap
+        - Windows version in Wine (Heroic, CrossOver, Whisky)
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - Rumbles in game
+        - Starts, but no rumble
+        - Does not start from the launcher
+        - Not tried in game yet
+    validations:
+      required: true
+  - type: dropdown
+    id: link
+    attributes:
+      label: Controller connection
+      options:
+        - Bluetooth
+        - USB cable
+        - Both
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version and Mac
+      placeholder: macOS 15.3, Apple M2
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Relevant lines of rumble.log or zstadia wine
+      description: For native games, wrap with `--log` and paste the lines around `haptics provided` and `rumble starts`. Replace your home folder path with `~`.
+      render: text
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Anything that helps, for example launch arguments you needed.

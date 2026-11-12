@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or help
+    url: https://github.com/illuminazionetech/zstadia/discussions/categories/q-a
+    about: Ask in Discussions, where answers help the next person too.
+  - name: Security problem
+    url: https://github.com/illuminazionetech/zstadia/security/advisories/new
+    about: Report vulnerabilities privately, never in a public issue.
